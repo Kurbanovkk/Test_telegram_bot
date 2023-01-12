@@ -8,8 +8,8 @@ app = ApplicationBuilder().token(
 app.add_handler(CommandHandler("hi", hi_command))
 app.add_handler(CommandHandler("help", help_command))
 app.add_handler(CommandHandler("doll", doll_command))
-app.add_handler(CommandHandler("news", news_command))
 app.add_handler(CommandHandler("weat", weat_command))
+app.add_handler(CommandHandler("news", news_command))
 
 print('start server')
 app.run_polling()

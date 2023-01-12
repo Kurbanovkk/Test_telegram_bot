@@ -9,7 +9,7 @@ async def hi_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(f'/hi\n/doll\n/news\n/weat\n/help')
+    await update.message.reply_text(f'/hi\n/help\n/doll\n/weat\n/news')
 
 
 async def doll_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -20,7 +20,7 @@ async def doll_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f'Курс доллара на сегодняшний день = {doll.text}')
 
 
-async def news_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def weat_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     url_1 = ('https://world-weather.ru/pogoda/russia/makhachkala/')
     response_1 = requests.get(url_1).text
     soup_1 = bs(response_1, 'html.parser')
@@ -28,7 +28,7 @@ async def news_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f'погода в Махачкале днем {weat.text}')
 
 
-async def weat_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def news_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     url_2 = ('https://www.rbc.ru/')
     response_2 = requests.get(url_2).text
     soup_2 = bs(response_2, 'html.parser')
